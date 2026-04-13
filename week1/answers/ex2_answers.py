@@ -56,20 +56,20 @@ TASK_B_IMPLEMENTED = True
 # Which path did your run take? "live" or "placeholder"
 # Look for the "mode" field in the TOOL_RESULT output of Task B.
 # If you didn't set FLYER_IMAGE_MODEL in .env, you will get "placeholder".
-TASK_B_MODE = "FILL_ME_IN"
+TASK_B_MODE = "placeholder"
 
 # The image URL returned by the tool. Copy exactly from your terminal output.
 # In placeholder mode this will be a placehold.co URL.
 # In live mode it will be a provider CDN URL.
-TASK_B_IMAGE_URL = "FILL_ME_IN"
+TASK_B_IMAGE_URL = "https://placehold.co/1200x628/1a1a2e/eaeaea?text=The+Haymarket+Vaults+%7C+160+guests&id=2ef939fbbaf6"
 
 # The prompt sent to the image model. Copy from terminal output.
-TASK_B_PROMPT_USED = "FILL_ME_IN"
+TASK_B_PROMPT_USED = "Professional event flyer for Edinburgh AI Meetup, tech professionals, modern venue at The Haymarket Vaults, Edinburgh. 160 guests tonight. Warm lighting, Scottish architecture background, clean modern typography."
 
 # Why did the agent's behaviour NOT change when Nebius removed FLUX?
 # One sentence. This is the point of the lesson.
 TASK_B_WHY_AGENT_SURVIVED = """
-FILL ME IN
+The agent did not change behaviour because the tool returned a structured success=True response with a valid image_url regardless of whether the live provider was available, so the agent's control flow continued normally with the placeholder fallback.
 """
 
 # ── Task C ─────────────────────────────────────────────────────────────────
@@ -90,14 +90,14 @@ SCENARIO_2_HALLUCINATED = False   # True or False
 
 # Paste the final [AI] message.
 SCENARIO_2_FINAL_ANSWER = """
-FILL ME IN
+None of the known Edinburgh venues can accommodate 300 guests with vegan options. The maximum capacity among available venues is 200 (The Guilford Arms), but it doesn't offer vegan options. The Albanach (180) and The Bow Bar (80) have vegan options but insufficient space. Would you like me to suggest alternative solutions or check different requirements?
 """
 
 # Scenario 3: out of scope (train times)
 # Did the agent try to call a tool?
 SCENARIO_3_TRIED_A_TOOL = False   # True or False
 
-SCENARIO_3_RESPONSE = "FILL_ME_IN"
+SCENARIO_3_RESPONSE = "I don't have access to real-time train schedules or transportation data. The agent suggested checking National Rail, Citymapper, or Trainline, then offered to help with Edinburgh pubs, weather, or event planning instead."
 
 # Would this behaviour be acceptable in a real booking assistant? Min 30 words.
 SCENARIO_3_ACCEPTABLE = """
