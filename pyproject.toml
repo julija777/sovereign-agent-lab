@@ -42,6 +42,7 @@ packages = ["sovereign_agent", "sovereign_agent.tools", "sovereign_agent.agents"
 dev-dependencies = [
     "pytest>=8.0.0",
     "ruff>=0.9.0",
+    "types-requests>=2.31.0",
 ]
 
 [tool.pytest.ini_options]
@@ -59,3 +60,6 @@ exclude = [".venv", "__pycache__", "exercise3_rasa"]
 [tool.ruff.lint]
 # E = pycodestyle errors  F = pyflakes  I = isort
 select = ["E", "F", "I"]
+
+[tool.mypy]
+ignore_missing_imports = true

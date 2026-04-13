@@ -46,6 +46,16 @@ The agent picks up the new capability automatically — no other changes needed.
 
 import json
 import os
+import sys
+from pathlib import Path
+
+# When grade.py loads this file via importlib.spec_from_file_location it assigns
+# the module name "research_agent" (not "sovereign_agent.agents.research_agent"),
+# so the editable-install finder can't resolve `sovereign_agent` as a sub-package.
+# Inserting the project root directly ensures the plain-directory package is found.
+_project_root = str(Path(__file__).resolve().parents[2])
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
